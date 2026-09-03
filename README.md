@@ -6,11 +6,11 @@ Offline Windows bootstrap for Python, pip, and a local virtual environment — f
 
 [![GitHub](https://img.shields.io/badge/GitHub-drSenkuIshigami-181717?logo=github)](https://github.com/drSenkuIshigami)
 [![Follow](https://img.shields.io/github/followers/drSenkuIshigami?label=Follow&style=social)](https://github.com/drSenkuIshigami)
-[![Stars](https://img.shields.io/github/stars/drSenkuIshigami/Python_fix?style=social)](https://github.com/drSenkuIshigami/Python_fix)
+[![Stars](https://img.shields.io/github/stars/drSenkuIshigami/PythonFix?style=social)](https://github.com/drSenkuIshigami/PythonFix)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/drSenkuIshigami/Python_fix/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/drSenkuIshigami/PythonFix/pulls)
 
-**Free to use. Free to reuse. Free to fork.** MIT — copy it, ship it, improve it, sell a product on top of it. Then come back and [star the repo](https://github.com/drSenkuIshigami/Python_fix), [follow @drSenkuIshigami](https://github.com/drSenkuIshigami), and [open a pull request](https://github.com/drSenkuIshigami/Python_fix/pulls). This project is built to be joined.
+**Free to use. Free to reuse. Free to fork.** MIT — copy it, ship it, improve it, sell a product on top of it. Then come back and [star the repo](https://github.com/drSenkuIshigami/PythonFix), [follow @drSenkuIshigami](https://github.com/drSenkuIshigami), and [open a pull request](https://github.com/drSenkuIshigami/PythonFix/pulls). This project is built to be joined.
 
 Also from this account: **[EbaratNeshan](https://github.com/drSenkuIshigami/EbaratNeshan)** — offline PDF & Word → Markdown. Recovers real Persian/Arabic letters from broken Word PDFs. RTL + LTR. LLM-ready. Nothing uploaded.
 
@@ -116,10 +116,10 @@ Optional: place `get-pip.py` next to the script if you need to bootstrap pip wit
 
 Python Fix is MIT. You do not need permission to use it, copy it, change it, or ship it.
 
-- **Star** this repo so other Windows labs can find it: [drSenkuIshigami/Python_fix](https://github.com/drSenkuIshigami/Python_fix)
+- **Star** this repo so other Windows labs can find it: [drSenkuIshigami/PythonFix](https://github.com/drSenkuIshigami/PythonFix)
 - **Follow** [Senku Ishigami · @drSenkuIshigami](https://github.com/drSenkuIshigami) for the next offline tools
-- **Fork** and send a [pull request](https://github.com/drSenkuIshigami/Python_fix/pulls) — wheels for more Python versions, better discovery, docs, translations
-- **Issues** with a log snippet (no secrets): [open one](https://github.com/drSenkuIshigami/Python_fix/issues)
+- **Fork** and send a [pull request](https://github.com/drSenkuIshigami/PythonFix/pulls) — wheels for more Python versions, better discovery, docs, translations
+- **Issues** with a log snippet (no secrets): [open one](https://github.com/drSenkuIshigami/PythonFix/issues)
 - More from the same lab: [EbaratNeshan](https://github.com/drSenkuIshigami/EbaratNeshan)
 
 License: [MIT](LICENSE) — free to use and reuse.
