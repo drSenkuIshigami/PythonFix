@@ -1,0 +1,99 @@
+# Python Fix
+
+Offline Windows bootstrap for Python, pip, and a local virtual environment.
+
+Use this folder when `pip` is missing or broken, the Microsoft Store Python stub is on PATH, or the PC has no internet. Double-click `run_setup.bat`. The script finds a real Python 3.8+ install, downloads wheels when the network is available, then installs everything from `deps\` into `.local_env` with no index and no further network calls.
+
+## How it works
+
+1. `run_setup.bat` locates a real `python.exe` (skips `WindowsApps` Store aliases).
+2. `offline_setup.py` may switch to a better matching interpreter (version and 32/64-bit vs wheels in `deps\`).
+3. pip is bootstrapped with `ensurepip`, a bundled `get-pip.py`, or a download if the PC is online.
+4. Required packages are stored as wheels in `deps\`.
+5. An isolated venv is created at `.local_env`.
+6. Packages are installed from `deps\` only (`pip install --no-index --find-links`).
+7. Imports are verified, then Python/Scripts are prepended on the user PATH (system PATH if you ran as Administrator).
+
+There are no prompts. Every step is appended to `setup_log.txt`.
+
+## Requirements
+
+- Windows
+- Python 3.8 or later already installed from [python.org](https://www.python.org/downloads/), Anaconda/Miniconda, or another real install
+- During Python setup, enable **Add python.exe to PATH** and the **py launcher** when you can
+
+Wheels currently in `deps\` were built for **64-bit Python 3.14** (`cp314`, `win_amd64`). On a PC with a different Python version or architecture, delete `deps\` and run setup once while online so matching wheels are downloaded.
+
+## Usage
+
+### On a PC with internet (prepare the folder)
+
+Double-click `run_setup.bat`, or from this folder:
+
+```bat
+py -3 -m pip download -r requirements.txt pip setuptools wheel -d deps
+```
+
+Copy the whole folder (`offline_setup.py`, `run_setup.bat`, `requirements.txt`, and `deps\`) to target PCs.
+
+### On a target PC (pip broken, offline, or both)
+
+Double-click `run_setup.bat`.
+
+After success, **open a new** Command Prompt or PowerShell (PATH changes do not apply to windows that were already open):
+
+```bat
+python --version
+pip --version
+```
+
+Isolated interpreter:
+
+```bat
+.local_env\Scripts\python.exe
+```
+
+Same window only (no new terminal):
+
+```bat
+call enable_pip.bat
+```
+
+```powershell
+. .\enable_pip.ps1
+```
+
+## Packages
+
+Edit `requirements.txt` before the first download. Pin versions in production so every PC gets the same wheels.
+
+Default example set:
+
+- `requests`
+- `numpy`
+
+`pip`, `setuptools`, and `wheel` are always downloaded into `deps\` as well.
+
+## Layout
+
+| Path | Role |
+|------|------|
+| `run_setup.bat` | Finds a real Python and launches the setup script |
+| `offline_setup.py` | Discovery, pip bootstrap, venv, offline install, PATH |
+| `requirements.txt` | Packages to download and install |
+| `deps\` | Local wheel cache (offline install source) |
+| `.local_env\` | Isolated virtual environment (created on the target PC) |
+| `setup_log.txt` | Full run log |
+| `enable_pip.bat` / `enable_pip.ps1` | Session-only PATH helpers (rewritten each run) |
+
+Optional: place `get-pip.py` next to the script if you need to bootstrap pip with no network and no `ensurepip`.
+
+## Troubleshooting
+
+| Problem | What to do |
+|---------|------------|
+| No Python found | Install Python 3.8+ from python.org. Avoid relying on the Microsoft Store alias. |
+| Install from `deps\` fails | Wheels do not match this Python. Delete `deps\` and re-run online, or rebuild `deps\` on a PC with the same version and 32/64-bit. |
+| `pip` works in a new terminal but not this one | PATH was updated in the registry, not in already-open windows. Open a new terminal, or run `enable_pip.bat` / `. .\enable_pip.ps1`. |
+| Need PATH for all users | Re-run `run_setup.bat` as Administrator. |
+| Import verification fails | A wheel may need the Visual C++ runtime, or `deps\` does not match this interpreter. See `setup_log.txt`. |

@@ -1,0 +1,4 @@
+# Example packages for the offline installer.
+# Pin versions in production so every PC gets the same wheels.
+requests
+numpy

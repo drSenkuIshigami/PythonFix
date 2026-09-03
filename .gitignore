@@ -1,0 +1,18 @@
+# Machine-local virtualenv created by the setup script
+.local_env/
+
+# Generated PATH helpers (rewritten on each successful run)
+enable_pip.bat
+enable_pip.ps1
+
+# Logs and Python cache
+setup_log.txt
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# OS junk
+Thumbs.db
+Desktop.ini
+.DS_Store
