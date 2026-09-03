@@ -1,6 +1,20 @@
 # Python Fix
 
-Offline Windows bootstrap for Python, pip, and a local virtual environment.
+**pip broken. Store stub on PATH. No internet. Still ship Python.**
+
+Offline Windows bootstrap for Python, pip, and a local virtual environment — from **[Senku Ishigami](https://github.com/drSenkuIshigami)** ([@drSenkuIshigami](https://github.com/drSenkuIshigami)).
+
+[![GitHub](https://img.shields.io/badge/GitHub-drSenkuIshigami-181717?logo=github)](https://github.com/drSenkuIshigami)
+[![Follow](https://img.shields.io/github/followers/drSenkuIshigami?label=Follow&style=social)](https://github.com/drSenkuIshigami)
+[![Stars](https://img.shields.io/github/stars/drSenkuIshigami/Python_fix?style=social)](https://github.com/drSenkuIshigami/Python_fix)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/drSenkuIshigami/Python_fix/pulls)
+
+**Free to use. Free to reuse. Free to fork.** MIT — copy it, ship it, improve it, sell a product on top of it. Then come back and [star the repo](https://github.com/drSenkuIshigami/Python_fix), [follow @drSenkuIshigami](https://github.com/drSenkuIshigami), and [open a pull request](https://github.com/drSenkuIshigami/Python_fix/pulls). This project is built to be joined.
+
+Also from this account: **[EbaratNeshan](https://github.com/drSenkuIshigami/EbaratNeshan)** — offline PDF & Word → Markdown. Recovers real Persian/Arabic letters from broken Word PDFs. RTL + LTR. LLM-ready. Nothing uploaded.
+
+---
 
 Use this folder when `pip` is missing or broken, the Microsoft Store Python stub is on PATH, or the PC has no internet. Double-click `run_setup.bat`. The script finds a real Python 3.8+ install, downloads wheels when the network is available, then installs everything from `deps\` into `.local_env` with no index and no further network calls.
 
@@ -97,3 +111,23 @@ Optional: place `get-pip.py` next to the script if you need to bootstrap pip wit
 | `pip` works in a new terminal but not this one | PATH was updated in the registry, not in already-open windows. Open a new terminal, or run `enable_pip.bat` / `. .\enable_pip.ps1`. |
 | Need PATH for all users | Re-run `run_setup.bat` as Administrator. |
 | Import verification fails | A wheel may need the Visual C++ runtime, or `deps\` does not match this interpreter. See `setup_log.txt`. |
+
+## Join this project
+
+Python Fix is MIT. You do not need permission to use it, copy it, change it, or ship it.
+
+- **Star** this repo so other Windows labs can find it: [drSenkuIshigami/Python_fix](https://github.com/drSenkuIshigami/Python_fix)
+- **Follow** [Senku Ishigami · @drSenkuIshigami](https://github.com/drSenkuIshigami) for the next offline tools
+- **Fork** and send a [pull request](https://github.com/drSenkuIshigami/Python_fix/pulls) — wheels for more Python versions, better discovery, docs, translations
+- **Issues** with a log snippet (no secrets): [open one](https://github.com/drSenkuIshigami/Python_fix/issues)
+- More from the same lab: [EbaratNeshan](https://github.com/drSenkuIshigami/EbaratNeshan)
+
+License: [MIT](LICENSE) — free to use and reuse.
+
+---
+
+**10,000,000,000%**
+
+### Ten billion percent: every impossible system is just an unsolved problem.
+
+Senku Ishigami · drSenkuIshigami
